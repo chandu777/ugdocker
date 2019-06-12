@@ -1,7 +1,6 @@
 # docker-usergrid
+docker run -e CLUSTER_NAME="usergrid_cluster" -e ENDPOINT_SNITCH="GossipingPropertyFileSnitch" -e DC_NAME="pune_dc" -e RACK_NAME="rack_p1" -d usergrid-cassandra
 
-docker run -e CLUSTER_NAME="usergrid_cluster" -e SEEDS="default" -e Endpoint_Snitch="GossipingPropertyFileSnitch" -e DC_NAME="pune_dc" -e RACK_NAME="rack_p1" gitcass
+docker run -e ES_CLUSTER_NAME="usergridcluster" -e ES_HEAP_SIZE=2g usergrid-elastic
 
-docker run -e ES_CLUSTER_NAME="usergridcluster" gites
-
-docker run -e CASSANDRA_URL="172.17.0.2" -e ELASTICSEARCH_HOST="172.17.0.3" ugtomcat
+docker run --env-file env.list usergrid
