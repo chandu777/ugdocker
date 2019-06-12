@@ -1,0 +1,148 @@
+
+cassandra.url=localhost:9160
+cassandra.datacenter.local=
+cassandra.keyspace.application=Usergrid_Applications
+cassandra.keyspace.strategy=SimpleStrategy
+cassandra.keyspace.strategy.local=SimpleStrategy
+cassandra.keyspace.replication=replication_factor:1
+cassandra.keyspace.replication.local=replication_factor:1
+#as per Baas Config for lock keyspace
+cassandra.lock.keyspace=Locks
+cassandra.lock.keyspace.strategy=SimpleStrategy
+cassandra.lock.keyspace.replication=replication_factor:2
+cassandra.connections=30
+
+cassandra.username=
+cassandra.password=
+
+cassandra.readcl=LOCAL_QUORUM
+usergrid.read.cl=CL_LOCAL_QUORUM
+cassandra.writecl=LOCAL_QUORUM
+usergrid.write.cl=CL_LOCAL_QUORUM
+usergrid.consistent.read.cl=CL_LOCAL_QUORUM
+cassandra.lock.readcl=LOCAL_QUORUM
+cassandra.lock.writecl=LOCAL_QUORUM
+
+scheduler.io.threads=100
+
+#####################  Elasticsearch (Indexing/Querying)  #####################
+
+elasticsearch.hosts=127.0.0.1
+elasticsearch.port=9300
+elasticsearch.cluster_name=elasticsearch
+elasticsearch.number_shards=18
+elasticsearch.number_replicas=1
+elasticsearch.client.type=TRANSPORT
+elasticsearch.index_bucket_count=10
+
+############################ Usergrid Queuing  ##########################
+
+#usergrid.use.default.queue=false
+elasticsearch.worker_count=8
+elasticsearch.worker_count_utility=2
+elasticsearch.worker_count_deadletter=1
+elasticsearch.worker_count_utility_deadletter=1
+elasticsearch.queue_impl=LOCAL
+
+    #index.flush.workers=10
+    #elasticsearch.queue_impl.resolution=false
+    #elasticsearch.queue_read_timeout=10000
+    #elasticsearch.queue_visibility_timeout=12000000
+    #usergrid.queue.lock.timeout=5
+
+#################### Amazon Queue Implementation Properties ###################
+
+#usergrid.queue.region=us-east-1
+#usergrid.queue.multiregion=false
+#usergrid.queue.regionList=us-east-1
+#usergrid.queue.deliveryLimit=5
+#usergrid.queue.publish.threads=100
+#usergrid.queue.publish.queuesize=850000
+
+#########################  Usergrid Cluster Configuration ###################
+usergrid.cluster.enabled=true
+usergrid.cluster.region.list=default
+usergrid.cluster.region.local=default
+usergrid.cluster.seeds=default:localhost
+usergrid.cluster.port=2551
+usergrid.cluster.hostname=
+
+#########################  Usergrid Unique Values Validation ##################
+collection.uniquevalues.actors=300
+collection.uniquevalues.authoritative.region=
+
+
+##############################  Usergrid Scheduler  ###########################
+usergrid.scheduler.enabled=true
+usergrid.scheduler.job.workers=4
+
+
+###############################  Usergrid Push Notifications  #############################
+usergrid.push.worker_count=2
+usergrid.push.queuemanager.cache.time-to-live=10
+usergrid.push.queuemanager.cache.size=200
+
+####################   Usergrid External SSO Configuration   #####################
+usergrid.external.sso.enabled=false
+usergrid.external.sso.provider=
+usergrid.external.sso.url=
+
+###############################  Usergrid Assets  #############################
+usergrid.binary.bucketname=usergrid-binaries
+#usergrid.binary.max-size-mb=50
+usergrid.temp.files=/tmp/usergrid
+usergrid.binary.uploader=local
+
+
+###############################  Usergrid Admin  ##############################
+usergrid.sysadmin.login.name=superuser
+usergrid.sysadmin.login.email=super@usergrid.com
+usergrid.sysadmin.login.password=test
+usergrid.sysadmin.login.allowed=true
+usergrid.superuser.addorg.enable=true
+usergrid.sysadmin.localhost.only=false
+usergrid.sysadmin.email=
+
+##############################  Usergrid Server  #############################
+mail.transport.protocol=
+mail.smtps.host=
+mail.smtps.port=
+mail.smtps.auth=
+mail.smtps.username=
+mail.smtps.password=
+usergrid.management.mailer=Usergrid Mailer <mailer@usergrid.com>
+usergrid.redirect_root=
+
+#usergrid.recaptcha.public=false
+#usergrid.recaptcha.private=false
+#swagger.basepath=http://localhost:8080
+
+usergrid.counter.batch.interval=30
+
+usergrid.cluster_name=default-property
+usergrid.auth.cache.time-to-live=3600
+usergrid.auth.cache.inmemory.time-to-live=30
+
+##############################  Usergrid Testing  #############################
+usergrid.setup-test-account=false
+usergrid.test=false
+
+usergrid.test-account.app=test-app
+usergrid.test-account.organization=test-organization
+usergrid.test-account.admin-user.username=test
+usergrid.test-account.admin-user.name=Test User
+usergrid.test-account.admin-user.email=test@usergrid.com
+usergrid.test-account.admin-user.password=test
+
+#########################  Usergrid Activation/Confirmation  ##################
+usergrid.management.allow-public-registrations=false
+usergrid.sysadmin.approve.users=false
+usergrid.sysadmin.approve.organizations=false
+usergrid.management.notify_sysadmin_of_new_organizations=false
+usergrid.management.notify_sysadmin_of_new_admin_users=false
+usergrid.management.admin_users_require_confirmation=false
+usergrid.org.sysadmin.email=
+usergrid.admin.sysadmin.email=
+usergrid.api.url.base=http://localhost:8080/ROOT
+usergrid.viewable.loginEndpoint=http://localhost:8080
+
